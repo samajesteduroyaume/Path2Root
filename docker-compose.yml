@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - JWT_SECRET=super_secret_dev_key
+      - DATABASE_URL=sqlite:///app/data/db.sqlite?mode=rwc
+    volumes:
+      - path2root-data:/app/data
+    restart: always
+
+volumes:
+  path2root-data:

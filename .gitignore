@@ -1,0 +1,37 @@
+# Secrets
+.env
+*.res
+
+# Logs
+*.log
+build_log.txt
+debug_log.txt
+error_log.txt
+errors.txt
+full_errors.txt
+div_close.log
+div_open.log
+divs_close.txt
+divs_open.txt
+
+# Rust / Backend
+back/target/
+back/db.sqlite
+
+# Node / Frontend
+front/node_modules/
+front/dist/
+front/dist-ssr/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Autres
+data/
+login.res
+register.res
+repro_login.sh
+test_live.sh

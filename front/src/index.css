@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #050505;
+  --color-cyber-blue: #00f2ff;
+  --color-cyber-purple: #bc13fe;
+  --color-cyber-green: #39ff14;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(16px);
+  --premium-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  --indigo-glow: 0 0 20px rgba(79, 70, 229, 0.2);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--premium-shadow);
+}
+
+.premium-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--premium-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: var(--indigo-glow), var(--premium-shadow);
+  transform: translateY(-2px);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scale-in {
+  animation: scale-in 0.2s ease-out;
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Critical Node Highlight */
+.critical-node {
+  border: 2px solid #ef4444 !important;
+  box-shadow: 0 0 15px #ef4444 !important;
+  animation: pulse-critical 2s infinite;
+}
+
+@keyframes pulse-critical {
+  0% {
+    box-shadow: 0 0 5px #ef4444;
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 20px #ef4444;
+    transform: scale(1.02);
+  }
+
+  100% {
+    box-shadow: 0 0 5px #ef4444;
+    transform: scale(1);
+  }
+}
+
+/* Cyber Stealth Effects */
+.cyber-grid {
+  background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-color: #030303;
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.3), inset 0 0 15px rgba(0, 242, 255, 0.1);
+  border: 1px solid rgba(0, 242, 255, 0.5);
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 242, 255, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes scanline {
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.99;
+  }
+
+  50% {
+    opacity: 0.97;
+  }
+
+  100% {
+    opacity: 0.99;
+  }
+}
+
+.bounty-card {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  border-left: 4px solid #eab308;
+}
+
+.critical-card {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  border-left: 4px solid #ef4444;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .glass-panel {
+    border: 1px solid #ddd !important;
+    background: white !important;
+  }
+}
+.terminal-entry-animate {
+  animation: slide-in-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+  0% { transform: translateY(-10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.2); border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.4); }
